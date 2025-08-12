@@ -1,176 +1,206 @@
+/* ======= RESETEO BÁSICO ======= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;                 /* Elimina márgenes por defecto */
+    padding: 0;                /* Elimina rellenos por defecto */
+    box-sizing: border-box;    /* Incluye borde y padding en el cálculo del tamaño */
 }
 
-:root{
-    --body-fondo:#f5f5f5;
-    --body-fuente:white;
-    --header-fondo:blue;
-    --header-fuente:white;
-    --navlistext-fuente:white;
-    --navlistexthover-fuente:#000000;
-    --productcard-fuente:white;
-    --productcardtitle-fuente:black;
-    --precio-fuente:#007bff;
-    --boton-card:#007bff;
-    --boton-fuente:white;
-    --botonhover-fuente:green;
-    --footer-fuente:#ccc;
-    --footer-fondo:#222;
-    --headerlogohover-fuente:black;
-    --footerhover-fondo:grey;
+/* ======= VARIABLES CSS ======= */
+:root {
+    --body-fondo: #f5f5f5;                 /* Color de fondo general */
+    --body-fuente: white;                  /* Color de texto del body */
+    --header-fondo: blue;                  /* Fondo del header */
+    --header-fuente: white;                 /* Texto del header */
+    --navlistext-fuente: white;             /* Color de enlaces del menú */
+    --navlistexthover-fuente: #000000;      /* Color de enlaces al pasar el mouse */
+    --productcard-fuente: white;            /* Fondo de las tarjetas de producto */
+    --productcardtitle-fuente: black;       /* Título de tarjeta de producto */
+    --precio-fuente: #007bff;               /* Color de precios */
+    --boton-card: #007bff;                  /* Fondo de botones */
+    --boton-fuente: white;                  /* Texto de botones */
+    --botonhover-fuente: green;             /* Fondo de botón en hover */
+    --footer-fuente: #ccc;                  /* Texto del pie de página */
+    --footer-fondo: #222;                   /* Fondo del pie de página */
+    --headerlogohover-fuente: black;        /* Color del logo en hover */
+    --footerhover-fondo: grey;              /* Fondo del footer en hover */
 }
 
+/* ======= CUERPO DE LA PÁGINA ======= */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color:var(--body-fondo);
-    color:var(--body-fuente);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía */
+    background-color: var(--body-fondo);                         /* Fondo */
+    color: var(--body-fuente);                                   /* Texto */
 }
 
+/* ======= HEADER ======= */
 .header {
-    display: flex; 
-    background-color:var(--header-fondo);
-    color:var(--header-fuente); 
+    display: flex;                                 /* Elementos alineados en fila */
+    background-color: var(--header-fondo);         /* Fondo del header */
+    color: var(--header-fuente);                   /* Texto del header */
 }
 
-.header__container{
-    width:100%;
+.header__container {
+    width: 100%;                                   /* Ocupa todo el ancho */
 }
 
 .header__logo {
-    align-items: flex-start;
-    padding-top: 47px;
-    font-size: 30px;
-    margin-left: 50px;
-    width: 30%;
+    align-items: flex-start;                       /* Alinea elementos al inicio */
+    padding-top: 47px;                             /* Espaciado superior */
+    font-size: 30px;                               /* Tamaño del texto */
+    margin-left: 50px;                             /* Margen izquierdo */
+    width: 30%;                                    /* Ocupa el 30% del ancho */
 }
 
 .header__nav {
-    display: flex;
-    justify-content:flex-end;
-    margin-top: 25px;
-    font-size: 25px;
-    margin-right: 50px;
-    margin-top: 50px;
+    display: flex;                                 /* Alineación en fila */
+    justify-content: flex-end;                     /* Alinea a la derecha */
+    font-size: 25px;                               /* Tamaño de fuente */
+    margin-right: 50px;                            /* Separación derecha */
+    margin-top: 50px;                              /* Separación superior */
 }
 
-.nav-list { 
-    list-style: none;
-    padding: 0; 
-    display: flex; 
-    gap: 20px;
-    margin-bottom: 50px;
+/* ======= MENÚ DE NAVEGACIÓN ======= */
+.nav-list {
+    list-style: none;                              /* Quita viñetas */
+    padding: 0;                                    /* Quita relleno */
+    display: flex;                                 /* Elementos en fila */
+    gap: 20px;                                     /* Separación entre elementos */
+    margin-bottom: 50px;                           /* Margen inferior */
 }
-
 
 .nav-list__item {
-    display: flex;
-    margin: 0 auto;
+    display: flex;                                 /* Alineación interna */
+    margin: 0 auto;                                /* Centrado automático */
 }
 
 .nav-list__link {
-    color: var(--navlistext-fuente);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
+    color: var(--navlistext-fuente);               /* Color del enlace */
+    text-decoration: none;                         /* Quita subrayado */
+    font-weight: 600;                              /* Texto en negrita */
+    transition: color 0.3s;                        /* Animación al cambiar color */
 }
 
 .nav-list__link--cart {
-    padding: 5px;
+    padding: 5px;                                  /* Relleno para el ícono del carrito */
 }
 
 .nav-list__icon {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
+    width: 24px;                                   /* Ancho del ícono */
+    height: 24px;                                  /* Alto del ícono */
+    vertical-align: middle;                        /* Centrado vertical */
 }
 
 .nav-list__link:hover {
-    color:var(--navlistexthover-fuente);
+    color: var(--navlistexthover-fuente);          /* Cambia color en hover */
 }
 
+/* ======= LISTA DE PRODUCTOS ======= */
 .product-list {
-    padding: 40px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    padding: 40px 0;                               /* Espaciado vertical */
+    display: flex;                                 /* Organización en fila */
+    flex-wrap: wrap;                               /* Permite salto de línea */
+    justify-content: space-around;                 /* Distribuye productos */
 }
 
+/* ======= TARJETA DE PRODUCTO ======= */
 .product-card {
-    background-color:var(--productcard-fuente);
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    text-align: center;
-    width: 22%;
-    margin-top: 20px;
-    transition: transform 0.3s ease;
+    background-color: var(--productcard-fuente);   /* Fondo de la tarjeta */
+    border-radius: 8px;                            /* Bordes redondeados */
+    padding: 15px;                                 /* Espaciado interno */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);         /* Sombra ligera */
+    text-align: center;                            /* Centra texto */
+    width: 22%;                                    /* Ancho relativo */
+    margin-top: 20px;                              /* Separación superior */
+    transition: transform 0.3s ease;               /* Animación suave */
 }
 
 .product-card:nth-child(4n) {
-    margin-right: 0;
+    margin-right: 0;                               /* Quita margen derecho en cada cuarta tarjeta */
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px);                   /* Efecto de elevación */
 }
 
 .product-card__image {
-    max-width: 100%;
-    border-radius: 5px;
+    max-width: 100%;                               /* Ajusta a ancho de tarjeta */
+    border-radius: 5px;                            /* Bordes redondeados */
 }
 
 .product-card__title {
-    color: var(--productcardtitle-fuente);
-    margin: 15px 0 10px;
-    font-size: 1.2rem;
+    color: var(--productcardtitle-fuente);         /* Color del título */
+    margin: 15px 0 10px;                           /* Margen vertical */
+    font-size: 1.2rem;                             /* Tamaño del texto */
 }
 
 .product-card__price {
-    font-weight: bold;
-    color:var(--precio-fuente);
-    margin-bottom: 15px;
+    font-weight: bold;                             /* Negrita */
+    color: var(--precio-fuente);                   /* Color del precio */
+    margin-bottom: 15px;                           /* Espaciado inferior */
 }
 
 .product-card__button {
-    background-color:var(--boton-card);
-    color: var(--boton-fuente);
-    border: none;
-    padding: 10px 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    background-color: var(--boton-card);           /* Fondo del botón */
+    color: var(--boton-fuente);                    /* Texto del botón */
+    border: none;                                  /* Sin borde */
+    padding: 10px 18px;                            /* Relleno interno */
+    border-radius: 5px;                            /* Bordes redondeados */
+    cursor: pointer;                               /* Manito al pasar */
+    font-weight: 600;                              /* Negrita */
+    transition: background-color 0.3s ease;        /* Animación al cambiar color */
 }
 
 .product-card__button:hover {
-    background-color:var(--botonhover-fuente);
+    background-color: var(--botonhover-fuente);    /* Fondo en hover */
 }
 
+/* ======= PIE DE PÁGINA ======= */
 .footer {
-    background-color:var(--footer-fondo);
-    color:var(--footer-fuente);
-    padding: 20px 0;
-    text-align: center;
-    font-size: 0.9rem;
-    margin-top: 120px;
+    background-color: var(--footer-fondo);         /* Fondo del footer */
+    color: var(--footer-fuente);                   /* Texto del footer */
+    padding: 20px 0;                               /* Relleno vertical */
+    text-align: center;                            /* Texto centrado */
+    font-size: 0.9rem;                             /* Texto pequeño */
+    margin-top: 120px;                             /* Separación superior */
 }
 
 .footer__text {
-    margin: 0;
+    margin: 0;                                     /* Sin margen */
 }
 
-.header__logo:hover{
-    color:var(--headerlogohover-fuente);
+.header__logo:hover {
+    color: var(--headerlogohover-fuente);          /* Cambia color del logo */
 }
 
-.footer:hover{
-    background-color:var(--footerhover-fondo);
-}
-.product-card__image:hover{
-    transform: scale(0.9);
+.footer:hover {
+    background-color: var(--footerhover-fondo);    /* Fondo en hover */
 }
 
-/* se le puso un hover al logo */
+.product-card__image:hover {
+    transform: scale(0.9);                         /* Reduce imagen al pasar */
+}
+
+/* ======= RESPONSIVE PARA MÓVILES (máx. 430px) ======= */
+@media (max-width: 430px) {
+    .product-card {
+        width: 150px;                              /* Ancho fijo */
+        align-items: center;                       /* Centra contenido */
+        margin-left: 200px;                        /* Desplaza tarjeta */
+    }
+    .header {
+        width: 150%;                               /* Ensancha header */
+    }
+    .footer {
+        width: 150%;                               /* Ensancha footer */
+    }
+}
+
+/* ======= RESPONSIVE PARA TABLET/DESKTOP (mín. 768px) ======= */
+@media (min-width: 768px) {
+    .footer {
+        margin-top: 20px;                          /* Reduce margen superior */
+    }
+    .product-card {
+        margin-top: 40px;                          /* Aumenta espacio superior */
+    }
+}
