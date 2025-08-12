@@ -4,18 +4,35 @@
     box-sizing: border-box;
 }
 
-
+:root{
+    --body-fondo:#f5f5f5;
+    --body-fuente:white;
+    --header-fondo:blue;
+    --header-fuente:white;
+    --navlistext-fuente:white;
+    --navlistexthover-fuente:#000000;
+    --productcard-fuente:white;
+    --productcardtitle-fuente:black;
+    --precio-fuente:#007bff;
+    --boton-card:#007bff;
+    --boton-fuente:white;
+    --botonhover-fuente:green;
+    --footer-fuente:#ccc;
+    --footer-fondo:#222;
+    --headerlogohover-fuente:black;
+    --footerhover-fondo:grey;
+}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
-    color:white;
+    background-color:var(--body-fondo);
+    color:var(--body-fuente);
 }
 
 .header {
     display: flex; 
-    background-color:blue;
-    color: white; 
+    background-color:var(--header-fondo);
+    color:var(--header-fuente); 
 }
 
 .header__container{
@@ -54,7 +71,7 @@ body {
 }
 
 .nav-list__link {
-    color: white;
+    color: var(--navlistext-fuente);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
@@ -71,7 +88,7 @@ body {
 }
 
 .nav-list__link:hover {
-    color: #000000;
+    color:var(--navlistexthover-fuente);
 }
 
 .product-list {
@@ -79,11 +96,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* overflow: hidden; */
 }
 
 .product-card {
-    background-color: white;
+    background-color:var(--productcard-fuente);
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -107,19 +123,20 @@ body {
 }
 
 .product-card__title {
+    color: var(--productcardtitle-fuente);
     margin: 15px 0 10px;
     font-size: 1.2rem;
 }
 
 .product-card__price {
     font-weight: bold;
-    color: #007bff;
+    color:var(--precio-fuente);
     margin-bottom: 15px;
 }
 
 .product-card__button {
-    background-color: #007bff;
-    color: white;
+    background-color:var(--boton-card);
+    color: var(--boton-fuente);
     border: none;
     padding: 10px 18px;
     border-radius: 5px;
@@ -129,12 +146,12 @@ body {
 }
 
 .product-card__button:hover {
-    background-color: #0056b3;
+    background-color:var(--botonhover-fuente);
 }
 
 .footer {
-    background-color: #222;
-    color: #ccc;
+    background-color:var(--footer-fondo);
+    color:var(--footer-fuente);
     padding: 20px 0;
     text-align: center;
     font-size: 0.9rem;
@@ -144,3 +161,16 @@ body {
 .footer__text {
     margin: 0;
 }
+
+.header__logo:hover{
+    color:var(--headerlogohover-fuente);
+}
+
+.footer:hover{
+    background-color:var(--footerhover-fondo);
+}
+.product-card__image:hover{
+    transform: scale(0.9);
+}
+
+/* se le puso un hover al logo */
